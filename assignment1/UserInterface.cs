@@ -48,12 +48,15 @@ namespace assignment1
             {
                 Invalidinput();
                 this.PrintMenu();
+
+                input = Console.ReadLine();
             }
             return Int32.Parse(input);
         }
 
         private void PrintMenu()
         {
+            Console.WriteLine();
             Console.WriteLine("1. Print List");
             Console.WriteLine("2. Search for item");
             Console.WriteLine("3. Add item to list");
@@ -65,6 +68,14 @@ namespace assignment1
             Console.WriteLine("That is not a valid entry");
             Console.WriteLine("Please enter a valid entry");
             Console.WriteLine();
+        }
+
+        public string SearchList()
+        {
+
+            Console.WriteLine("Enter Wine ID:");
+
+            return Console.ReadLine();
         }
     }
 }

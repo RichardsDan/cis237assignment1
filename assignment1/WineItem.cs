@@ -55,10 +55,10 @@ namespace assignment1
         //*******************************
         //            Methods
         //*******************************
-
         public override string ToString()
         {
-            return this._wineId + "  " + this._wineDesc + "  " + this._winePack;
+            WineItemCollection collection = new WineItemCollection();
+            return collection.WineToString(_wineId, _wineDesc, _winePack);
         }
     }
 }

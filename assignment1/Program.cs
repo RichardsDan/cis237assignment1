@@ -14,12 +14,16 @@ namespace assignment1
         static void Main(string[] args)
         {
             UserInterface ui = new UserInterface();
-
+            
             int choice = ui.StartMenu();
 
             if (choice != 2)
             {
-                // Handle CSV Processing here
+                WineItem[] wineItems = new WineItem[4000];
+                CSVProcess CSVProcessor = new CSVProcess();
+                WineItemCollection collection = new WineItemCollection();
+
+                CSVProcessor.ImportCSV("../../../datafiles/WineList.csv", wineItems);
 
                 choice = ui.GetUserInput();
 
@@ -27,16 +31,24 @@ namespace assignment1
                 {
                     if (choice == 1)
                     {
-                        // Print wine list here
+                        foreach (WineItem wineItem in wineItems)
+                        {
+                            if (wineItem != null)
+                            {
+                              Console.WriteLine(wineItem.ToString());
+                            }
+                        }
                     }
                     if (choice == 2)
                     {
-                        // Search wine list here
+                        Console.WriteLine(collection.ListSearch(ui.SearchList(), wineItems));
                     }
                     if (choice == 3)
                     {
                         // Add item to wine list here
                     }
+
+                    choice = ui.GetUserInput();
                 }
             }
         }
