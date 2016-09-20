@@ -11,6 +11,8 @@ namespace assignment1
 {
     class UserInterface
     {
+        // Menu at start to decide if user wants to load the wine list
+        // Also checks to make sure input is valid
         public int StartMenu()
         {
             string input = "";
@@ -38,6 +40,8 @@ namespace assignment1
             return Int32.Parse(input);
         }
 
+        // Gets user input for menu after loading wine list
+        // Also checks to make sure input is valid
         public int GetUserInput()
         {
             this.PrintMenu();
@@ -54,6 +58,7 @@ namespace assignment1
             return Int32.Parse(input);
         }
 
+        // Prints main menu for program
         private void PrintMenu()
         {
             Console.WriteLine();
@@ -63,6 +68,7 @@ namespace assignment1
             Console.WriteLine("4. Exit");
         }
 
+        // Prints invalid input message
         private void Invalidinput()
         {
             Console.WriteLine("That is not a valid entry");
@@ -70,6 +76,7 @@ namespace assignment1
             Console.WriteLine();
         }
 
+        // Gets wineId for searching wine list
         public string SearchList()
         {
 
@@ -78,18 +85,21 @@ namespace assignment1
             return Console.ReadLine();
         }
 
+        // Gets wineId to add to wine list
         public string GetWineID()
         {
             Console.WriteLine("Enter Wine ID");
             return Console.ReadLine();
         }
 
+        // Gets wineDesc to add to wine list
         public string GetWineDesc()
         {
             Console.WriteLine("Enter Wine Description");
             return Console.ReadLine();
         }
 
+        // Gets winePack to add to wine list
         public string GetWinePack()
         {
             Console.WriteLine("Enter Wine Pack");

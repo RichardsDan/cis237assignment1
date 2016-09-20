@@ -50,6 +50,7 @@ namespace assignment1
             }
         }
 
+        // Splits input line into three parts and places them into wineItem array, then places that array into WineItems array
         public void ProcessLine(string line, WineItem[] wineItems, int index)
         {
             string[] parts = line.Split(',');

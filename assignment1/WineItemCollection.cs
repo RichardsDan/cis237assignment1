@@ -11,11 +11,14 @@ namespace assignment1
 {
     class WineItemCollection
     {
+        // Formats wineItems for output to screen
         public string WineToString(string id, string desc, string pack)
         {
             return (id.PadRight(7) + desc.PadRight(60) + pack);
         }
 
+        // Allows user to search wine list by wine ID, then outputs wine to screen if found.
+        // Displays message if wineID is not found
         public string ListSearch(string wineSearch, WineItem[] wineItems)
         {
             foreach (WineItem wineItem in wineItems)
@@ -32,6 +35,7 @@ namespace assignment1
                 Environment.NewLine);
         }
 
+        // Allows user to add item to wine list, then searches wineItems array for an empty spot
         public void AddToList(UserInterface ui, WineItem[] wineItems)
         {
             int index = 0;
@@ -45,10 +49,12 @@ namespace assignment1
                         index++;
                     }
                 }
+                // Prompts user to enter ID, Desc, and Pack, then adds new item to list
                 wineItems[index] = new WineItem(ui.GetWineID(), ui.GetWineDesc(), ui.GetWinePack());
 
                 Console.WriteLine(wineItems[index]);
             }
+            // Error handler
             catch (Exception e)
             {
                 Console.WriteLine();
