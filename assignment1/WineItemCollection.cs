@@ -13,7 +13,7 @@ namespace assignment1
     {
         public string WineToString(string id, string desc, string pack)
         {
-            return (id + "  " + desc.PadRight(60) + pack);
+            return (id.PadRight(7) + desc.PadRight(60) + pack);
         }
 
         public string ListSearch(string wineSearch, WineItem[] wineItems)
@@ -32,5 +32,29 @@ namespace assignment1
                 Environment.NewLine);
         }
 
+        public void AddToList(UserInterface ui, WineItem[] wineItems)
+        {
+            int index = 0;
+
+            try
+            {
+                foreach (WineItem wineitem in wineItems)
+                {
+                    if (wineitem != null)
+                    {
+                        index++;
+                    }
+                }
+                wineItems[index] = new WineItem(ui.GetWineID(), ui.GetWineDesc(), ui.GetWinePack());
+
+                Console.WriteLine(wineItems[index]);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Unable to add item to list.");
+                Console.WriteLine(e);
+            }
+        }
     }
 }

@@ -45,7 +45,7 @@ namespace assignment1
                     }
                     if (choice == 3)
                     {
-                        // Add item to wine list here
+                        collection.AddToList(ui, wineItems);
                     }
 
                     choice = ui.GetUserInput();

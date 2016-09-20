@@ -77,5 +77,23 @@ namespace assignment1
 
             return Console.ReadLine();
         }
+
+        public string GetWineID()
+        {
+            Console.WriteLine("Enter Wine ID");
+            return Console.ReadLine();
+        }
+
+        public string GetWineDesc()
+        {
+            Console.WriteLine("Enter Wine Description");
+            return Console.ReadLine();
+        }
+
+        public string GetWinePack()
+        {
+            Console.WriteLine("Enter Wine Pack");
+            return Console.ReadLine();
+        }
     }
 }
